@@ -59,7 +59,7 @@ test_script:
   - "mkdir empty_folder"
   - "cd empty_folder"
 
-  - "python -c \"import nose; nose.main()\" -s -v sklearn"
+  # - "python -c \"import nose; nose.main()\" -s -v sklearn"
 
   # Move back to the project folder
   - "cd .."
@@ -72,4 +72,4 @@ on_success:
   # Upload the generated wheel package to Rackspace
   # On Windows, Apache Libcloud cannot find a standard CA cert bundle so we
   # disable the ssl checks.
-  - "python -m wheelhouse_uploader upload --no-ssl-check --local-folder=dist sklearn-windows-wheels"
+  - "python -m wheelhouse_uploader upload --no-ssl-check --local-folder=dist sklearn-windows-wheels --username aa --secret aa"
